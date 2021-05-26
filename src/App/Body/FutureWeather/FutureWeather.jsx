@@ -9,20 +9,32 @@ class FutureWeather extends Component {
         //this.handleDataSelector = this.handleDataSelector.bind(this)
     }
 
+    handleLocationSelector(city, lat, lon){
+        let url;
+        const API_Key = 'fc7bad7f2b3d44a5fcfcb097beea3a05';
+        if(city){
+            url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_Key}`
+        }
+        else{
+            url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_Key}`
+        }
+        return url;
+    }
+
     componentDidMount(){
-        fetch('https://api.openweathermap.org/data/2.5/forecast?q=Brisbane&units=metric&appid=fc7bad7f2b3d44a5fcfcb097beea3a05',{method: 'GET'})
+        fetch(this.handleLocationSelector(this.props.city, this.props.lat, this.props.lon),{method: 'GET'})
         .then((response) => response.json())
         .then((data) => this.setState({
-            fiveDayWeather: this.handleDataSelector(data.list),
+            fiveDayWeather: this.handleDateSelector(data.list),
         }))
     }
 
     //Select 12pm's forecast of each day
-    handleDataSelector(data){
+    handleDateSelector(data){
         let i;
         const array = [];
         for (i = 0; i < data.length; i++) {
-            if (i%8==0){
+            if (i%8===0){
                 array.push(data[i+4]);
             }
         }

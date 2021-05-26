@@ -6,9 +6,16 @@ class Body extends Component {
     render(){
         return(
             <>
-            <FutureWeather />
-                <CurrentWeather />
-                
+            <CurrentWeather 
+                city = ''
+                lat='-27.4679'
+                lon='153.0281'
+            />
+            <FutureWeather 
+                city = ''
+                lat='-27.4679'
+                lon='153.0281'
+            />
             </>
         )
     }

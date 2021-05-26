@@ -14,8 +14,20 @@ class CurrentWeather extends Component {
         }
     }
 
+    handleLocationSelector(city, lat, lon){
+        let url;
+        const API_Key = 'fc7bad7f2b3d44a5fcfcb097beea3a05';
+        if(city){
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_Key}`
+        }
+        else{
+            url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_Key}`
+        }
+        return url;
+    }
+
     componentDidMount(){
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=Brisbane&units=metric&appid=fc7bad7f2b3d44a5fcfcb097beea3a05',{method: 'GET'})
+        fetch(this.handleLocationSelector(this.props.city, this.props.lat, this.props.lon),{method: 'GET'})
         .then((response) => response.json())
         .then((data) => this.setState({
             city: data.name,
