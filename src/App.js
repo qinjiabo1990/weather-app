@@ -1,5 +1,6 @@
 import React from 'react';
 import Body from './App/Body'
+import Footer from './App/Footer'
 
 function App() {
   //passing DATA
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <Body />
+      <Footer />
     </>
   );
 }
