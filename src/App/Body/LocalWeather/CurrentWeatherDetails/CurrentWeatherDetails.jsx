@@ -4,6 +4,7 @@ import FlexColumn from '../../../../components/FlexColumn';
 import FlexRow from '../../../../components/FlexRow';
 
 const Details = styled(FlexRow)`
+    border-top: 1px gray solid;
     width: 250px;
     justify-content: space-between;
     font-size: 1.2rem;

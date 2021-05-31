@@ -7,7 +7,8 @@ const Body = styled(FlexRow)`
     align-items: baseline;
     border: 1px solid red;
     margin: 50px;
-    padding:20px 0 50px 0;
+    padding: 20px 0 50px 0;
+    width: auto;
 `
 
 const WeatherMain = styled(FlexColumn)`
@@ -38,7 +39,7 @@ const City = styled.h1`
     font-size: 3rem;
 `
 
-const CurrentWeatherBody = ({city, weather_main, weather_icon, temp, temp_min, temp_max}) => {
+const CurrentWeatherBody = ({ city, weather_main, weather_icon, temp, temp_min, temp_max }) => {
     return (
         <>
             <Body>

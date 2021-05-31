@@ -3,20 +3,24 @@ import styled from 'styled-components';
 import FlexColumn from '../../../../../components/FlexColumn';
 
 const Details = styled(FlexColumn)`
-    margin: 0 25px;
+    margin: 0 20px;
 `
 
 const Date = styled.p`
-    font-size: 1.6rem;
-`
-
-const Temp = styled.p`
     font-size: 1.4rem;
 `
 
+const Temp = styled.p`
+    font-size: 1.3rem;
+`
+
 const Img = styled.img`
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+`
+
+const Border = styled.div`
+    border: 1px gray solid;
 `
 
 const FutureWeatherDetails = ({ date, max_temp, weather_icon }) => {

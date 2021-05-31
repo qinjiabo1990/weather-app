@@ -4,7 +4,6 @@ import Footer from './App/Footer';
 import Header from './App/Header';
 
 
-
 function App() {
   //passing DATA
   //getting lon and lat
@@ -12,7 +11,9 @@ function App() {
   return (
     <>
       <Header />
-      <Body />
+      <Body 
+        city = 'Brisbane'
+      />
       <Footer />
     </>
   );

@@ -26,14 +26,14 @@ class FutureWeather extends Component {
     }
 
     componentDidMount() {
-        fetch(this.handleLocationSelector(this.props.city, this.props.lat, this.props.lon), { method: 'GET' })
+        fetch(this.handleLocationSelector(this.props.future_city, this.props.lat, this.props.lon), { method: 'GET' })
+            //.then((response) => console.log(response.list))
             .then((response) => response.json())
             .then((data) => this.setState({
                 fiveDayWeather: this.handleDateSelector(data.list),
             }))
     }
 
-    //Select 12pm's forecast of each day
     handleDateSelector(data) {
         let i;
         const array = [];
