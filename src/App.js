@@ -1,7 +1,9 @@
 import React from 'react';
-import Body from './App/Body'
-import Footer from './App/Footer'
-import Header from './App/Header'
+import Body from './App/Body';
+import Footer from './App/Footer';
+import Header from './App/Header';
+
+
 
 function App() {
   //passing DATA

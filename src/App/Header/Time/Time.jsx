@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 const TimeSize = styled.div`
-    font-size: 20px;
-
+    font-size: 18px;
 `
 
 class Time extends Component {

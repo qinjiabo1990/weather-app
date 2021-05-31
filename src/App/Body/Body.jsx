@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import CurrentWeather from './CurrentWeather'
 import FutureWeather from './FutureWeather'
 
 class Body extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <>
-            <CurrentWeather 
-                city = ''
-                lat='-27.4679'
-                lon='153.0281'
-            />
-            <FutureWeather 
-                city = ''
-                lat='-27.4679'
-                lon='153.0281'
-            />
+                <CurrentWeather
+                    city='Brisbane'
+                //lat='-27.4679'
+                //lon='153.0281'
+                />
+                <FutureWeather
+                    city=''
+                    lat='-27.4679'
+                    lon='153.0281'
+                />
             </>
         )
     }

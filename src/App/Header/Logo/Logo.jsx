@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Img = styled.img`
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 `;
 
 const Logo = () => (

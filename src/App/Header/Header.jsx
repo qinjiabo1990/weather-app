@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import Logo from './Logo';
 import Time from './Time';
-import Flex from '../../components/Flex'
+import FlexRow from '../../components/FlexRow'
 
-const Nav = styled.div`
-    
+const Nav = styled(FlexRow)`
+    align-items: center;
+    min-width: 300px;
 `
 
 class Header extends Component {
@@ -16,11 +17,10 @@ class Header extends Component {
     render() {
         return (
             <>
-                <Flex>
+                <Nav>
                     <Logo />
                     <Time />
-                </Flex>
-
+                </Nav>
             </>
         )
     }
