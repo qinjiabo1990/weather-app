@@ -4,11 +4,20 @@ import FlexColumn from '../../../../components/FlexColumn';
 import FlexRow from '../../../../components/FlexRow';
 
 const Body = styled(FlexRow)`
+    flex-wrap: wrap;
     align-items: baseline;
     border: 1px solid red;
+    border-radius: 12px;
     margin: 50px;
     padding: 20px 0 50px 0;
     width: auto;
+    @media screen and (max-width: 600px) {
+        margin: 20px 10px 50px 10px;
+    }
+`
+
+const Left = styled(FlexColumn)`
+    min-width: 220px;
 `
 
 const WeatherMain = styled(FlexColumn)`
@@ -43,7 +52,7 @@ const CurrentWeatherBody = ({ city, weather_main, weather_icon, temp, temp_min, 
     return (
         <>
             <Body>
-                <FlexColumn>
+                <Left>
                     <FlexColumn>
                         <City>{city}</City>
                         <WeatherDesc>
@@ -51,15 +60,15 @@ const CurrentWeatherBody = ({ city, weather_main, weather_icon, temp, temp_min, 
                             <Img src={`http://openweathermap.org/img/w/${weather_icon}.png`} alt="weather" />
                         </WeatherDesc>
                     </FlexColumn>
-                </FlexColumn>
-                <FlexColumn>
-                    <Temp>{`${temp} °C`}</Temp>
+                </Left>
+                <Left>
+                    <Temp>{`${Math.round(temp)} °C`}</Temp>
                     <MaxMin>
-                        <p>{`${temp_min} °C`}</p>
+                        <p>{`${Math.round(temp_min)} °C`}</p>
                         <hr />
-                        <p>{`${temp_max} °C`}</p>
+                        <p>{`${Math.round(temp_max)} °C`}</p>
                     </MaxMin>
-                </FlexColumn>
+                </Left>
             </Body>
         </>
     )

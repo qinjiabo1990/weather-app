@@ -6,15 +6,25 @@ import CurrentWeatherDetails from './CurrentWeatherDetails';
 import FutureWeather from './FutureWeather';
 
 const WeatherForecast = styled(FlexRow)`
+    flex-wrap: wrap;
     border: 1px red solid;
+    border-radius: 12px;
     justify-content: space-evenly;
     width: auto;
-    margin:50px;
-    padding: 50px 0; 
+    margin: 50px;
+    padding: 50px 50px;
+    @media screen and (max-width: 600px) {
+        margin: 50px 10px;
+    }
 `
 
 const Border = styled.div`
-    border-right: 1px gray solid;
+    width: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0 20px;
+    @media screen and (max-width: 1019px){
+        display: none;
+    }
 `
 
 class LocalWeather extends Component {

@@ -29,7 +29,7 @@ const FutureWeatherDetails = ({ date, max_temp, weather_icon }) => {
             <Details>
                 <Date>{date}</Date>
                 <Img src={`http://openweathermap.org/img/w/${weather_icon}.png`} alt="weather" />
-                <Temp>{`${max_temp} °C`}</Temp>
+                <Temp>{`${Math.round(max_temp)} °C`}</Temp>
             </Details>
         </>
     )

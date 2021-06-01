@@ -6,16 +6,24 @@ import CityWeatherTheme from './CityWeatherTheme';
 
 const OtherCity = styled(FlexColumn)`
     width: auto;
-    margin:50px;
+    margin: 50px;
     border: 1px red solid;
+    border-radius: 12px;
     padding: 50px 0;
+    @media screen and (max-width: 600px) {
+        margin: 50px 10px;
+    }
+`
+
+const City = styled(FlexRow)`
+    flex-wrap: wrap;
 `
 
 class CityWeather extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cityList: ['Sydney', 'Melbourne', 'Perth', 'Adelaide', 'Hobart', 'Gold Coast'],
+            cityList: ['Sydney', 'Melbourne', 'Perth', 'Adelaide', 'Hobart', 'Cairns'],
             weatherList: [],
         }
         this.addData = this.addData.bind(this);
@@ -43,7 +51,7 @@ class CityWeather extends Component {
             <>
                 <OtherCity>
                     <h2>Other Cities</h2>
-                    <FlexRow>
+                    <City>
                         {this.state.weatherList.map((data)=>(
                             <CityWeatherTheme 
                             key={data.id}
@@ -52,7 +60,7 @@ class CityWeather extends Component {
                             weather_icon={data.weather[0].icon}
                             />
                         ))}
-                    </FlexRow>
+                    </City>
                 </OtherCity>
             </>
         )

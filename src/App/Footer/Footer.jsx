@@ -9,7 +9,6 @@ const Copyright = styled(FlexRow)`
 const Footer = () => {
     return (
         <>
-            <hr />
             <Copyright>
                 <p>© 2021 Weather App. All Rights Reserved. Designed by Bob</p>
             </Copyright>

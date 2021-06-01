@@ -5,11 +5,12 @@ import Time from './Time';
 import FlexRow from '../../components/FlexRow'
 
 const Nav = styled(FlexRow)`
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    min-width: 300px;
+    
     position: fixed;
-    background-color: rgba(19, 63, 85, 0.3);
+    background-color: rgba(19, 63, 85, 1);
     top: 0;
     left: 0;
 `

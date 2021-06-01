@@ -25,7 +25,7 @@ const CityWeatherTheme = ({city, weather_icon, temp, weather_main}) => {
             <Cities>
                 <City>{city}</City>
                 <Img src={`http://openweathermap.org/img/w/${weather_icon}.png`} alt="weather" />
-                <Temp>{`${temp} °C`}</Temp>
+                <Temp>{`${Math.round(temp)} °C`}</Temp>
             </Cities>
         </>
     )

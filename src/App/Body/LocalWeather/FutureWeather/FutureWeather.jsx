@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import FutureWeatherDetails from './FutureWeatherDetails';
 import FlexRow from '../../../../components/FlexRow';
 import FlexColumn from '../../../../components/FlexColumn';
+import styled from 'styled-components';
+
+const Body = styled(FlexRow)`
+    flex-wrap: wrap;
+`
 
 class FutureWeather extends Component {
     constructor(props) {
@@ -53,7 +58,7 @@ class FutureWeather extends Component {
             <>
                 <FlexColumn>
                     <h2>Forecast</h2>
-                    <FlexRow>
+                    <Body>
                         {this.state.fiveDayWeather.map((data) => (
                             <FutureWeatherDetails
                                 key={data.dt}
@@ -62,7 +67,7 @@ class FutureWeather extends Component {
                                 weather_icon={data.weather[0].icon}
                             />
                         ))}
-                    </FlexRow>
+                    </Body>
                 </FlexColumn>
             </>
         )

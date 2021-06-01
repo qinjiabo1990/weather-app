@@ -4,7 +4,7 @@ import CityWeather from './CityWeather';
 import styled from 'styled-components';
 
 const Main = styled.div`
-    padding-top: 30px;
+    padding-top: 70px;
 `
 
 class Body extends Component {

@@ -5,7 +5,7 @@ import FlexRow from '../../../../components/FlexRow';
 
 const Details = styled(FlexRow)`
     border-top: 1px gray solid;
-    width: 250px;
+    min-width: 200px;
     justify-content: space-between;
     font-size: 1.2rem;
 `
@@ -20,7 +20,7 @@ const CurrentWeatherDetails = ({
                 <FlexColumn>
                     <Details>
                         <p>Feels Like</p>
-                        <p>{`${feels} °C`}</p>
+                        <p>{`${Math.round(feels)} °C`}</p>
                     </Details>
                     <Details>
                         <p>Humidity</p>

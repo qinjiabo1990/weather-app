@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Img = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    padding-left: 60px;
 `;
 
 const Logo = () => (

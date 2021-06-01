@@ -2,8 +2,7 @@ import React from 'react';
 import Body from './App/Body';
 import Footer from './App/Footer';
 import Header from './App/Header';
-
-
+import FlexColumn from './components/FlexColumn';
 
 function App() {
   //passing DATA
@@ -11,11 +10,14 @@ function App() {
   //getting location from input bar in header
   return (
     <>
-      <Header />
-      <Body 
-        city = 'Brisbane'
-      />
-      <Footer />
+      <FlexColumn>
+        <Header />
+        <Body
+          city='Brisbane'
+        />
+        <Footer />
+      </FlexColumn>
+
     </>
   );
 }
