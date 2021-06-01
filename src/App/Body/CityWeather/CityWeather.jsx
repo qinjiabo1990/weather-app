@@ -7,7 +7,7 @@ import CityWeatherTheme from './CityWeatherTheme';
 const OtherCity = styled(FlexColumn)`
     width: auto;
     margin: 50px;
-    border: 1px red solid;
+    background-color: rgba(19, 63, 85, 0.8);
     border-radius: 12px;
     padding: 50px 0;
     @media screen and (max-width: 600px) {

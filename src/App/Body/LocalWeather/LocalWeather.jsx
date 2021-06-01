@@ -7,7 +7,7 @@ import FutureWeather from './FutureWeather';
 
 const WeatherForecast = styled(FlexRow)`
     flex-wrap: wrap;
-    border: 1px red solid;
+    background-color: rgba(19, 63, 85, 0.8);
     border-radius: 12px;
     justify-content: space-evenly;
     width: auto;

@@ -6,11 +6,11 @@ import FlexRow from '../../../../components/FlexRow';
 const Body = styled(FlexRow)`
     flex-wrap: wrap;
     align-items: baseline;
-    border: 1px solid red;
     border-radius: 12px;
     margin: 50px;
     padding: 20px 0 50px 0;
     width: auto;
+    background-color: rgba(19, 63, 85, 0.8);
     @media screen and (max-width: 600px) {
         margin: 20px 10px 50px 10px;
     }
