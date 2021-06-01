@@ -10,7 +10,7 @@ const WeatherForecast = styled(FlexRow)`
     justify-content: space-evenly;
     width: auto;
     margin:50px;
-    padding: 50px 0 50px 0; 
+    padding: 50px 0; 
 `
 
 const Border = styled.div`

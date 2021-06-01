@@ -10,7 +10,6 @@ class FutureWeather extends Component {
             fiveDayWeather: [],
         }
         this.getDate = this.getDate.bind(this);
-        //this.handleDataSelector = this.handleDataSelector.bind(this)
     }
 
     handleLocationSelector(city, lat, lon) {

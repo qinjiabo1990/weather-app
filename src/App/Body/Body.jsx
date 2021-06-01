@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import LocalWeather from './LocalWeather'
+import LocalWeather from './LocalWeather';
+import CityWeather from './CityWeather';
+import styled from 'styled-components';
 
+const Main = styled.div`
+    padding-top: 30px;
+`
 
 class Body extends Component {
     constructor(props) {
@@ -52,19 +57,22 @@ class Body extends Component {
         const { city, temp, temp_max, temp_min, weather_main, weather_icon, feels, wind, humidity, pressure } = this.state;
         return (
             <>
-                <LocalWeather
-                    city={city}
-                    temp={temp}
-                    temp_max={temp_max}
-                    temp_min={temp_min} 
-                    weather_main={weather_main} 
-                    weather_icon={weather_icon} 
-                    feels={feels}
-                    wind={wind} 
-                    humidity={humidity} 
-                    pressure={pressure}
-                    future_city={this.props.city}
-                />
+                <Main>
+                    <LocalWeather
+                        city={city}
+                        temp={temp}
+                        temp_max={temp_max}
+                        temp_min={temp_min}
+                        weather_main={weather_main}
+                        weather_icon={weather_icon}
+                        feels={feels}
+                        wind={wind}
+                        humidity={humidity}
+                        pressure={pressure}
+                        future_city={this.props.city}
+                    />
+                    <CityWeather />
+                </Main>
             </>
         )
     }
