@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import logo from '../../../assets/img/Logo.png'
 
 const Img = styled.img`
     width: 70px;
@@ -9,7 +10,7 @@ const Img = styled.img`
 
 const Logo = () => (
     <>
-        <Img src='../../../../Img/Logo.png' alt="Logo" />
+        <Img src={logo} alt="Logo" />
     </>
 )
 
