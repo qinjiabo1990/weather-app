@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LocalWeather from './LocalWeather';
 import CityWeather from './CityWeather';
 import styled from 'styled-components';
+require('dotenv').config();
 
 const Main = styled.div`
     padding-top: 70px;
@@ -26,12 +27,12 @@ class Body extends Component {
 
     handleLocationSelector(city, lat, lon) {
         let url;
-        const API_Key = 'fc7bad7f2b3d44a5fcfcb097beea3a05';
+        const API_KEY = process.env.REACT_APP_API_KEY;
         if (city) {
-            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_Key}`
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
         }
         else {
-            url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_Key}`
+            url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
         }
         return url;
     }

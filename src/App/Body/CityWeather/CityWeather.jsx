@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import FlexColumn from '../../../components/FlexColumn';
 import FlexRow from '../../../components/FlexRow';
 import CityWeatherTheme from './CityWeatherTheme';
+require('dotenv').config();
+
 
 const OtherCity = styled(FlexColumn)`
     width: auto;
@@ -30,9 +32,9 @@ class CityWeather extends Component {
     }
 
     componentDidMount(){
-        const API_Key = 'fc7bad7f2b3d44a5fcfcb097beea3a05';
+        const API_KEY = process.env.REACT_APP_API_KEY;
         for(let i=0; i< this.state.cityList.length; i++){
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityList[i]}&units=metric&appid=${API_Key}`,{method: 'GET'})
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityList[i]}&units=metric&appid=${API_KEY}`,{method: 'GET'})
             .then((response) => response.json())
             .then((data) => this.setState({
                 weatherList: this.addData(data),
