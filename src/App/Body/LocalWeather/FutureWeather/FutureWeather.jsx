@@ -29,14 +29,24 @@ class FutureWeather extends Component {
         return url;
     }
 
+		getFutureWeatherAPI() {
+			fetch(this.handleLocationSelector(this.props.future_city, this.props.lat, this.props.lon), { method: 'GET' })
+			//.then((response) => console.log(response.list))
+			.then((response) => response.json())
+			.then((data) => this.setState({
+					fiveDayWeather: this.handleDateSelector(data.list),
+			}))
+		}
+
     componentDidMount() {
-        fetch(this.handleLocationSelector(this.props.future_city, this.props.lat, this.props.lon), { method: 'GET' })
-            //.then((response) => console.log(response.list))
-            .then((response) => response.json())
-            .then((data) => this.setState({
-                fiveDayWeather: this.handleDateSelector(data.list),
-            }))
+        this.getFutureWeatherAPI()
     }
+
+		componentDidUpdate(prevProps, prevState) {
+			if (prevProps.future_city!== this.props.future_city) {
+				this.getFutureWeatherAPI()
+			}
+	}
 
     handleDateSelector(data) {
         let i;

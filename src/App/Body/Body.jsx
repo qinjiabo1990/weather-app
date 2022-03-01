@@ -12,7 +12,7 @@ class Body extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: '-',
+            city: 'Brisbane',
             temp: 0,
             temp_max: 0,
             temp_min: 0,
@@ -23,6 +23,7 @@ class Body extends Component {
             humidity: 0,
             pressure: 0,
         }
+        this.handleCitySelector = this.handleCitySelector.bind(this);
     }
 
     handleLocationSelector(city, lat, lon) {
@@ -37,22 +38,39 @@ class Body extends Component {
         return url;
     }
 
-    componentDidMount() {
-        fetch(this.handleLocationSelector(this.props.city, this.props.lat, this.props.lon), { method: 'GET' })
-            .then((response) => response.json())
-            .then((data) => this.setState({
-                city: data.name,
-                temp: data.main.temp,
-                temp_max: data.main.temp_max,
-                temp_min: data.main.temp_min,
-                weather_main: data.weather[0].main,
-                weather_icon: data.weather[0].icon,
-                feels: data.main.feels_like,
-                wind: data.wind.speed,
-                humidity: data.main.humidity,
-                pressure: data.main.pressure,
-            }))
+    handleCitySelector(selectedCity) {
+        this.setState({
+            city: selectedCity
+        })
     }
+
+    fetchDateAPI() {
+        fetch(this.handleLocationSelector(this.state.city, this.props.lat, this.props.lon), { method: 'GET' })
+        .then((response) => response.json())
+        .then((data) => this.setState({
+            city: data.name,
+            temp: data.main.temp,
+            temp_max: data.main.temp_max,
+            temp_min: data.main.temp_min,
+            weather_main: data.weather[0].main,
+            weather_icon: data.weather[0].icon,
+            feels: data.main.feels_like,
+            wind: data.wind.speed,
+            humidity: data.main.humidity,
+            pressure: data.main.pressure,
+        }))
+    }
+
+    componentDidMount() {
+        this.fetchDateAPI()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.city!== this.state.city) {
+            this.fetchDateAPI()
+        }
+    }
+
 
     render() {
         const { city, temp, temp_max, temp_min, weather_main, weather_icon, feels, wind, humidity, pressure } = this.state;
@@ -70,9 +88,10 @@ class Body extends Component {
                         wind={wind}
                         humidity={humidity}
                         pressure={pressure}
-                        future_city={this.props.city}
                     />
-                    <CityWeather />
+                    <CityWeather 
+                        citySelector = {this.handleCitySelector}
+                    />
                 </Main>
             </>
         )

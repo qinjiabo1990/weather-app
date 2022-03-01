@@ -48,7 +48,7 @@ class LocalWeather extends Component {
                     />
                     <Border />
                     <FutureWeather
-                        future_city={this.props.future_city}
+                        future_city={this.props.city}
                     // lat='-27.4679'
                     // lon='153.0281'
                     />

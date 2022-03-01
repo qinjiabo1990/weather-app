@@ -25,10 +25,11 @@ class CityWeather extends Component {
     constructor(props){
         super(props);
         this.state = {
-            cityList: ['Sydney', 'Melbourne', 'Perth', 'Adelaide', 'Hobart', 'Cairns'],
+            cityList: ['Sydney', 'Melbourne', 'Perth', 'Adelaide', 'Hobart', 'Brisbane'],
             weatherList: [],
         }
         this.addData = this.addData.bind(this);
+				this.citySelectHandler = this.citySelectHandler.bind(this);
     }
 
     componentDidMount(){
@@ -48,6 +49,10 @@ class CityWeather extends Component {
         return array;
     }
 
+		citySelectHandler = (city) => {
+			this.props.citySelector(city)
+		}
+
     render(){
         return (
             <>
@@ -60,6 +65,7 @@ class CityWeather extends Component {
                             city={data.name}
                             temp={data.main.temp}
                             weather_icon={data.weather[0].icon}
+														cityHandler={this.citySelectHandler}
                             />
                         ))}
                     </City>

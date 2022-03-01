@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Body from './App/Body';
 import Footer from './App/Footer';
@@ -18,14 +18,13 @@ function App() {
   //passing DATA
   //getting lon and lat
   //getting location from input bar in header
+
   return (
     <>
       <Bg>
         <FlexColumn>
           <Header />
-          <Body
-            city='Sydney'
-          />
+          <Body />
           <Footer />
         </FlexColumn>
       </Bg>
