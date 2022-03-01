@@ -71,7 +71,6 @@ class Body extends Component {
         }
     }
 
-
     render() {
         const { city, temp, temp_max, temp_min, weather_main, weather_icon, feels, wind, humidity, pressure } = this.state;
         return (
